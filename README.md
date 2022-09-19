@@ -6,3 +6,9 @@
 > 
 > (2) 右健 ``u8g2 Generator.ps1`` 並點擊 ``用PowerShell執行``
 > ![用PowerShell執行](https://raw.githubusercontent.com/YFHD-osu/ESP32_SSD1306_u8g2/main/README.images/Run%20With%20PowerShell.png)
+
+## 使用範例:
+> ```  
+> u8g2.begin();
+> u8g2.enableUTF8Print();  //啟用UTF8文字的功能  
+> ```
