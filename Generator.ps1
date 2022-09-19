@@ -168,6 +168,8 @@ function EndMessage{
   if ($printSampleCode){
     Write-Host 'U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);'
     Write-Host ''
+    Write-Host '#include <U8g2lib.h>'
+    Write-Host ''
     Write-Host 'void setup() {'
     Write-Host '  u8g2.begin();'
     Write-Host '  u8g2.enableUTF8Print();  //啟用UTF8文字的功能  '
