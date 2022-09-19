@@ -12,9 +12,10 @@
 ## 程式範例:
 > 適用於: SSD1306 + ESP32
 > ```  
-> U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 > 
 > #include <U8g2lib.h>
+> > 
+> U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 >
 > void setup() {
 >   u8g2.begin();
