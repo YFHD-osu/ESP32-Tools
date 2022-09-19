@@ -7,8 +7,26 @@
 > (2) 右健 ``u8g2 Generator.ps1`` 並點擊 ``用PowerShell執行``
 > ![用PowerShell執行](https://raw.githubusercontent.com/YFHD-osu/ESP32_SSD1306_u8g2/main/README.images/Run%20With%20PowerShell.png)
 
-## 使用範例:
+## 程式範例:
 > ```  
-> u8g2.begin();
-> u8g2.enableUTF8Print();  //啟用UTF8文字的功能  
+> U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
+> 
+> void setup() {
+>   u8g2.begin();
+>   u8g2.enableUTF8Print();  //啟用UTF8文字的功能  
+> }
+> 
+> void loop() {
+>   u8g2.setFont(u8g2_font_unifont_t_chinese1);
+    u8g2.firstPage();
+    do {
+    u8g2.setCursor(0, 14);
+    u8g2.print("溫度: " + String(Temperature) + "°C");
+    u8g2.setCursor(0, 35);
+    u8g2.print("濕度: " + String(Humidity) + "%");
+    u8g2.setCursor(0, 56);
+    u8g2.print("PM2.5: " + String(pm25) + "mg/m³");
+    } while (u8g2.nextPage());
+> }
+> 
 > ```
