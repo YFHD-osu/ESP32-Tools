@@ -2,9 +2,11 @@
 
 ## 使用方法:
 > (1) 將 ``Generator.ps1`` 下載並放置在與.ino相同的目錄下
+>
 > ![放置於相同的目錄下](https://raw.githubusercontent.com/YFHD-osu/ESP32_SSD1306_u8g2/main/README.images/Same%20Directory.png)
 > 
 > (2) 右健 ``Generator.ps1`` 並點擊 ``用PowerShell執行``
+>
 > ![用PowerShell執行](https://raw.githubusercontent.com/YFHD-osu/ESP32_SSD1306_u8g2/main/README.images/Run%20With%20PowerShell.png)
 
 ## 程式範例:
