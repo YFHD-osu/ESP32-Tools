@@ -18,15 +18,15 @@
 > 
 > void loop() {
 >   u8g2.setFont(u8g2_font_unifont_t_chinese1);
-    u8g2.firstPage();
-    do {
-    u8g2.setCursor(0, 14);
-    u8g2.print("溫度: " + String(Temperature) + "°C");
-    u8g2.setCursor(0, 35);
-    u8g2.print("濕度: " + String(Humidity) + "%");
-    u8g2.setCursor(0, 56);
-    u8g2.print("PM2.5: " + String(pm25) + "mg/m³");
-    } while (u8g2.nextPage());
+>   u8g2.firstPage();
+>   do {
+>   u8g2.setCursor(0, 14);
+>   u8g2.print("中文1");
+>   u8g2.setCursor(0, 35);
+>   u8g2.print("中文2");
+>   u8g2.setCursor(0, 56);
+>   u8g2.print("中文3");
+>   } while (u8g2.nextPage());
 > }
 > 
 > ```
