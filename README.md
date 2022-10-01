@@ -2,7 +2,7 @@
 
 # ESP32 SSD1306 u8g2 中文字型自動生成器
 
-## 使用方法:
+使用方法:
 > (1) 將 ``Generator.ps1`` 下載並放置在與.ino相同的目錄下
 >
 > ![放置於相同的目錄下](https://raw.githubusercontent.com/YFHD-osu/ESP32_SSD1306_u8g2/main/README.images/Same%20Directory.png)
