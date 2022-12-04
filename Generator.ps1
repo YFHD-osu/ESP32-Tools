@@ -1,12 +1,12 @@
-#æ“ä½œéç¨‹åƒè€ƒ: https://blog.jmaker.com.tw/chinese_oled/
+#¾Ş§@¹Lµ{°Ñ¦Ò: https://blog.jmaker.com.tw/chinese_oled/
 
 $WindowWidth = (Get-Host).UI.RawUI.MaxWindowSize.Width
 if ($WindowWidth%2 -eq 1){$WindowWidth -= 1}
 
 function SelectInoList{
     param (
-	  [string]$Title = 'é¸æ“‡ä½ çš„å°ˆæ¡ˆåç¨±',
-	  [string]$SelectionLore = 'è«‹é¸æ“‡ä¸Šæ–¹æ‰€é¡¯ç¤ºçš„é¸é …',
+	  [string]$Title = '¿ï¾Ü§Aªº±M®×¦WºÙ',
+	  [string]$SelectionLore = '½Ğ¿ï¾Ü¤W¤è©ÒÅã¥Üªº¿ï¶µ',
 	  [array]$inoFiles,
 	  [string]$titleBar = "="*(($WindowWidth - $Title.Length - [regex]::matches($Title, '[^A-z0-9&._\-!@`#$%^&*()_/\+,."'' {}=;<> `:]').count - 2)/2 )
     )
@@ -19,7 +19,7 @@ function SelectInoList{
 	  $displayFileName = $inoFiles[$i].Name
 	  Write-Host " $displayNum > $displayFileName" ;
 	}
-    Write-Host " Q > ä¾†å–æ¶ˆæ“åš"
+    Write-Host " Q > ¨Ó¨ú®ø¾Ş°µ"
 	Write-Host $titleBar $Title $titleBar
 	
 	$selection = Read-Host $SelectionLore
@@ -32,10 +32,10 @@ function SelectInoList{
 	try {
 	  [int]$selection = $selection
 	  if ($selection -gt $inoFiles.count) {
-	    SelectInoList -inoFiles $inoFiles -SelectionLore "'$selection' è¶…å‡ºäº†é¸æ“‡ç¯„åœ"
+	    SelectInoList -inoFiles $inoFiles -SelectionLore "'$selection' ¶W¥X¤F¿ï¾Ü½d³ò"
 	  }
 	}catch{
-	  SelectInoList -SelectionLore "'$selection' ä¸æ˜¯ä¸€å€‹æœ‰æ•ˆçš„é¸æ“‡" -inoFiles $inoFiles
+	  SelectInoList -SelectionLore "'$selection' ¤£¬O¤@­Ó¦³®Äªº¿ï¾Ü" -inoFiles $inoFiles
 	  return
 	}
 
@@ -44,7 +44,7 @@ function SelectInoList{
 
 function ShowAllChinese{
   param (
-    [string]$Title = 'åµæ¸¬åˆ°çš„ä¸­æ–‡å­—',
+    [string]$Title = '°»´ú¨ìªº¤¤¤å¦r',
     [string]$titleBar = "="*(($WindowWidth - $Title.Length - [regex]::matches($Title, '[^A-z0-9&._\-!@`#$%^&*()_/\+,."'' {}=;<> `:]').count - 2)/2 ),
     [array]$ChineseList
   )
@@ -68,36 +68,36 @@ function CheckDownload{
     $ResetChineseMap = $true
   )
 	
-  if ((Test-Path -Path â€.\u8g2Files\â€) -ne $true) {mkdir u8g2Files > $null}
+  if ((Test-Path -Path ¡¨.\u8g2Files\¡¨) -ne $true) {mkdir u8g2Files > $null}
 	
-  if ((Test-Path -Path â€.\u8g2Files\unifont.bdfâ€ -PathType Leaf) -ne $true) {
+  if ((Test-Path -Path ¡¨.\u8g2Files\unifont.bdf¡¨ -PathType Leaf) -ne $true) {
     $bdfconvURL = 'https://github.com/olikraus/u8g2/raw/master/tools/font/bdf/unifont.bdf'
-    $Path=â€.\u8g2Files\unifont.bdfâ€
-    Write-Host " | æœªåµæ¸¬åˆ°unifont.bdfï¼Œæ­£åœ¨ä¸‹è¼‰!"
+    $Path=¡¨.\u8g2Files\unifont.bdf¡¨
+    Write-Host " | ¥¼°»´ú¨ìunifont.bdf¡A¥¿¦b¤U¸ü!"
     Invoke-WebRequest -URI $bdfconvURL -OutFile $Path
   }
 
-  if ((Test-Path -Path â€.\u8g2Files\bdfconv.exeâ€ -PathType Leaf) -ne $true) {
+  if ((Test-Path -Path ¡¨.\u8g2Files\bdfconv.exe¡¨ -PathType Leaf) -ne $true) {
     $bdfconvURL = 'https://github.com/olikraus/u8g2/raw/master/tools/font/bdfconv/bdfconv.exe'
-    $Path=â€.\u8g2Files\bdfconv.exeâ€
-    Write-Host " | æœªåµæ¸¬åˆ°bdfconv.exeï¼Œæ­£åœ¨ä¸‹è¼‰!"
+    $Path=¡¨.\u8g2Files\bdfconv.exe¡¨
+    Write-Host " | ¥¼°»´ú¨ìbdfconv.exe¡A¥¿¦b¤U¸ü!"
     Invoke-WebRequest -URI $bdfconvURL -OutFile $Path
   }
 
-  if ((Test-Path -Path â€.\u8g2Files\7x13.bdfâ€ -PathType Leaf) -ne $true) {
+  if ((Test-Path -Path ¡¨.\u8g2Files\7x13.bdf¡¨ -PathType Leaf) -ne $true) {
     $bdfconvURL = 'https://raw.githubusercontent.com/olikraus/u8g2/master/tools/font/bdf/7x13.bdf'
-    $Path=â€.\u8g2Files\7x13.bdfâ€
-    Write-Host " | æœªåµæ¸¬åˆ°7x13.bdfï¼Œæ­£åœ¨ä¸‹è¼‰!"
+    $Path=¡¨.\u8g2Files\7x13.bdf¡¨
+    Write-Host " | ¥¼°»´ú¨ì7x13.bdf¡A¥¿¦b¤U¸ü!"
     Invoke-WebRequest -URI $bdfconvURL -OutFile $Path
   }
 	
-  if((Test-Path -Path â€.\u8g2Files\chinese1.map.BAKâ€ -PathType Leaf) -ne $true){
+  if((Test-Path -Path ¡¨.\u8g2Files\chinese1.map.BAK¡¨ -PathType Leaf) -ne $true){
     $bdfconvURL = 'https://raw.githubusercontent.com/olikraus/u8g2/master/tools/font/build/chinese1.map'
-    $Path=â€.\u8g2Files\chinese1.map.BAKâ€
-    Write-Host " | æœªåµæ¸¬åˆ°chinese1.mapï¼Œæ­£åœ¨ä¸‹è¼‰!"
+    $Path=¡¨.\u8g2Files\chinese1.map.BAK¡¨
+    Write-Host " | ¥¼°»´ú¨ìchinese1.map¡A¥¿¦b¤U¸ü!"
     Invoke-WebRequest -URI $bdfconvURL -OutFile $Path
   }else{
-	Write-Host " | æ­£åœ¨é‡è£½chinese1.map!"
+	Write-Host " | ¥¿¦b­«»schinese1.map!"
   }
   Copy-Item ".\u8g2Files\chinese1.map.BAK" -Destination ".\u8g2Files\chinese1.map" -Recurse
   
@@ -106,7 +106,7 @@ function CheckDownload{
 
 function StartConvert{
   param (
-    [string]$Title = 'è½‰æ›ä¸­',
+    [string]$Title = 'Âà´«¤¤',
     [string]$titleBar = "="*(($WindowWidth - $Title.Length - [regex]::matches($Title, '[^A-z0-9&._\-!@`#$%^&*()_/\+,."'' {}=;<> `:]').count - 2)/2 ),
     [array]$ChineseList
   )
@@ -129,7 +129,7 @@ function StartConvert{
 function WriteFile{
   param (
     $user = $env:UserProfile,
-    $u8g2FontsPath = â€$user\Documents\Arduino\libraries\U8g2\src\clib\u8g2_fonts.câ€
+    $u8g2FontsPath = ¡¨$user\Documents\Arduino\libraries\U8g2\src\clib\u8g2_fonts.c¡¨
   )
 
   $UnicodeArray = Get-Content -Path .\u8g2Files\u8g2_font_unifont.c -Raw -Encoding UTF8
@@ -142,13 +142,13 @@ function WriteFile{
   [int64]$endPostion = $u8g2FontsContext.IndexOf('";',$startPostion)
 
   if (($startPostion -ne -1) -and ($endPostion -ne -1)){
-    Write-Host " | å·²åœ¨ u8g2_fonts.c æª”æ¡ˆä¸­æ‰¾åˆ° u8g2_font_unifont_t_chinese1 ï¼Œè¦†è“‹ä¸­..."
+    Write-Host " | ¤w¦b u8g2_fonts.c ÀÉ®×¤¤§ä¨ì u8g2_font_unifont_t_chinese1 ¡AÂĞ»\¤¤..."
     [int]$removeCount = $endPostion - $startPostion + 2
     $u8g2FontsContext.Remove($startPostion,$removeCount).Insert($startPostion, $WriteContext) | Set-Content -Encoding UTF8 -Path $u8g2FontsPath #.Insert($startPostion,$WriteContext)
   }else{
-    Write-Host " | ç„¡æ³•åœ¨ u8g2_fonts.c æª”æ¡ˆä¸­æ‰¾åˆ° u8g2_font_unifont_t_chinese1 ï¼Œç„¡æ³•è¦†è“‹æª”æ¡ˆï¼Œä¹Ÿè¨±é‡æ–°å®‰è£u8g2å¯ä»¥è§£æ±º?"
+    Write-Host " | µLªk¦b u8g2_fonts.c ÀÉ®×¤¤§ä¨ì u8g2_font_unifont_t_chinese1 ¡AµLªkÂĞ»\ÀÉ®×¡A¤]³\­«·s¦w¸Ëu8g2¥i¥H¸Ñ¨M?"
     return
-    # $u8g2FontsContext.Insert(40, $WriteContext) | Set-Content -Encoding UTF8 -Path â€$user\Documents\u8g2_fonts.câ€
+    # $u8g2FontsContext.Insert(40, $WriteContext) | Set-Content -Encoding UTF8 -Path ¡¨$user\Documents\u8g2_fonts.c¡¨
   }
 
   return
@@ -156,13 +156,13 @@ function WriteFile{
 
 function EndMessage{
   param (
-    [string]$Title = 'ç¨‹å¼åŸ·è¡Œå®Œç•¢ï¼Œå·²æ›´æ–°ä¸­æ–‡å­—å‹',
+    [string]$Title = 'µ{¦¡°õ¦æ§¹²¦¡A¤w§ó·s¤¤¤å¦r«¬',
     [string]$titleBar = "="*(($WindowWidth - $Title.Length - [regex]::matches($Title, '[^A-z0-9&._\-!@`#$%^&*()_/\+,."'' {}=;<> `:]').count - 2)/2 ),
     [bool]$printSampleCode = $true
   )
 	
   Write-Host $titleBar $Title $titleBar""
-  Write-Host "ä»¥ä¸‹ç‚ºç¯„ä¾‹ç¨‹å¼:"
+  Write-Host "¥H¤U¬°½d¨Òµ{¦¡:"
   Write-Host ""
 
   if ($printSampleCode){
@@ -172,7 +172,7 @@ function EndMessage{
     Write-Host ''
     Write-Host 'void setup() {'
     Write-Host '  u8g2.begin();'
-    Write-Host '  u8g2.enableUTF8Print();  //å•Ÿç”¨UTF8æ–‡å­—çš„åŠŸèƒ½  '
+    Write-Host '  u8g2.enableUTF8Print();  //±Ò¥ÎUTF8¤å¦rªº¥\¯à  '
     Write-Host '}'
     Write-Host ''
     Write-Host 'void loop() {'
@@ -180,11 +180,11 @@ function EndMessage{
     Write-Host '  u8g2.firstPage();'
     Write-Host '  do {'
     Write-Host '  u8g2.setCursor(0, 14);'
-    Write-Host '  u8g2.print("ä¸­æ–‡1");'
+    Write-Host '  u8g2.print("¤¤¤å1");'
     Write-Host '  u8g2.setCursor(0, 35);'
-    Write-Host '  u8g2.print("ä¸­æ–‡2");'
+    Write-Host '  u8g2.print("¤¤¤å2");'
     Write-Host '  u8g2.setCursor(0, 56);'
-    Write-Host '  u8g2.print("ä¸­æ–‡3");'
+    Write-Host '  u8g2.print("¤¤¤å3");'
     Write-Host '  } while (u8g2.nextPage());'
     Write-Host '}'
   }
@@ -202,14 +202,14 @@ $FileName = ""
 if ( $inoFiles.count -gt 1 ){
   $select = SelectInoList -inoFiles $inoFiles
   $FileName = $inoFiles[$select].Name
-  Write-Host " | å·²æ‰‹å‹•é¸å–æª”æ¡ˆ: '$FileName'"
+  Write-Host " | ¤w¤â°Ê¿ï¨úÀÉ®×: '$FileName'"
 }elseif ($inoFiles.Count -eq 0) {
-  Write-Host " | æœªåµæ¸¬åˆ°åŒç›®éŒ„ä¸‹çš„.inoæª”æ¡ˆ"
-  Write-Host " | ç¨‹å¼å³å°‡çµæŸ..."
+  Write-Host " | ¥¼°»´ú¨ì¦P¥Ø¿ı¤Uªº.inoÀÉ®×"
+  Write-Host " | µ{¦¡§Y±Nµ²§ô..."
   return
 }else{
   $FileName = $inoFiles[0].Name
-  Write-Host " | å·²è‡ªå‹•é¸å–æª”æ¡ˆ: '$FileName'"
+  Write-Host " | ¤w¦Û°Ê¿ï¨úÀÉ®×: '$FileName'"
 }
 
 $raw = (Get-Content -Path .\$FileName -Raw -Encoding UTF8) -replace '\r?\n', ''
@@ -218,24 +218,24 @@ $chineseWords = [regex]::matches($raw, '[^A-z0-9&._\-!@`#$%^&*()_/\+,."'' {}=;<>
 if ($chineseWords.count -ne 1) {
   ShowAllChinese -ChineseList $chineseWords
 }else{
-  Write-Host " | æœªåµæ¸¬åˆ°éœ€è¦è½‰è­¯çš„ä¸­æ–‡å­—ï¼Œç¨‹å¼å³å°‡é€€å‡º!"
+  Write-Host " | ¥¼°»´ú¨ì»İ­nÂàÄ¶ªº¤¤¤å¦r¡Aµ{¦¡§Y±N°h¥X!"
   return
 }
 
 CheckDownload
 StartConvert -ChineseList $chineseWords
 
-# $WriteContext | Set-Content -Encoding UTF8 -NoNewline -Path â€$user\Documents\u8g2_fonts.câ€ 
+# $WriteContext | Set-Content -Encoding UTF8 -NoNewline -Path ¡¨$user\Documents\u8g2_fonts.c¡¨ 
 
 $user = $env:UserProfile
 if ((Test-Path -Path $user\Documents\Arduino\libraries\U8g2\src\clib\u8g2_fonts.c -PathType Leaf) -eq $true) {
-  Write-Host " | å·²åœ¨é è¨­è³‡æ–™å¤¾ä¸­æ‰¾åˆ°: u8g2_fonts.c"
+  Write-Host " | ¤w¦b¹w³]¸ê®Æ§¨¤¤§ä¨ì: u8g2_fonts.c"
   WriteFile
 }else{
-  Write-Host " | æœªåœ¨é è¨­è³‡æ–™å¤¾ä¸­æ‰¾åˆ°: u8g2_fonts.c"
+  Write-Host " | ¥¼¦b¹w³]¸ê®Æ§¨¤¤§ä¨ì: u8g2_fonts.c"
   while($true){
-    Write-Host " | è«‹æ‰‹å‹•å®šä½ u8g2_fonts.c çš„ä½ç½® (é€šå¸¸åœ¨ ...\Arduino\libraries\U8g2\src\clib\u8g2_fonts.c)"
-    $customPath = Read-Host " | è«‹è¼¸å…¥æ–‡ä»¶çš„å®Œæ•´ä½ç½®æˆ–å°‡æ–‡ä»¶æ‹–æ›³è‡³æ­¤è¦–çª—`n"
+    Write-Host " | ½Ğ¤â°Ê©w¦ì u8g2_fonts.c ªº¦ì¸m (³q±`¦b ...\Arduino\libraries\U8g2\src\clib\u8g2_fonts.c)"
+    $customPath = Read-Host " | ½Ğ¿é¤J¤å¥óªº§¹¾ã¦ì¸m©Î±N¤å¥ó©ì¦²¦Ü¦¹µøµ¡`n"
     if ((Test-Path -Path $customPath) -eq $true){
       WriteFile -u8g2FontsPath $customPath
       break
