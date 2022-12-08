@@ -12,7 +12,9 @@
 > ![用PowerShell執行](https://raw.githubusercontent.com/YFHD-osu/ESP32_SSD1306_u8g2/main/README.images/Run%20With%20PowerShell.png)
 > 
 > 註: 大部分的電腦預設是不可以直接執行.ps1檔案的，所以可以透過此只性來解除限制:
+> 
 > 設置開放執行: ``` Set-ExecutionPolicy -ExecutionPolicy Unrestricted ```
+> 
 > 還原為預設值: ``` Set-ExecutionPolicy -ExecutionPolicy Default ```
 
 ## 程式範例:
