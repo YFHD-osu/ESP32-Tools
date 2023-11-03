@@ -4,12 +4,12 @@
 
 使用方法:
 > (1) 將 ``Generator.ps1`` 下載並放置在與.ino相同的目錄下
->
-> ![放置於相同的目錄下](https://raw.githubusercontent.com/YFHD-osu/ESP32_SSD1306_u8g2/main/README.images/Same%20Directory.png)
+> 
+>![放置於相同的目錄下](https://github.com/YFHD-osu/ESP32-Tools/assets/92370642/b85c1933-17ac-49f6-bcb9-2660d5d2817f)
 > 
 > (2) 右健 ``Generator.ps1`` 並點擊 ``用PowerShell執行``
 >
-> ![用PowerShell執行](https://raw.githubusercontent.com/YFHD-osu/ESP32_SSD1306_u8g2/main/README.images/Run%20With%20PowerShell.png)
+> ![用PowerShell執行](https://github.com/YFHD-osu/ESP32-Tools/assets/92370642/90b29bab-8acc-4d0c-99ff-fe88f358eb1b)
 > 
 > 註: 大部分的電腦預設是不可以直接執行.ps1檔案的，所以可以透過此只性來解除限制:
 > 
