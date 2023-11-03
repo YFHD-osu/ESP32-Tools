@@ -1,0 +1,11 @@
+# VS code realted
+.vscode/
+
+# Video Converter
+*.mp4
+oled_TMP/
+video.h
+code/
+
+# Python
+__pycache__/
